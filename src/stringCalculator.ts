@@ -1,9 +1,9 @@
+import { NegativeNumberError } from "./util";
 
 /*
 * Input: a string of delimiter separated  numbers
 * Output: an integer, sum of the numbers
 */
-
 export function add(numbers: string): number {
     
     let result = 0;
@@ -12,7 +12,11 @@ export function add(numbers: string): number {
     let delimiter: RegExp = /,|\n/;
     
     const numArray = numbers.split(delimiter).map(num => parseInt(num, 10));
+    let negatives: number[] = numArray.filter(num => num < 0);
     
+    if (negatives.length) {
+        throw new NegativeNumberError(negatives);
+    }
     result = numArray.reduce((sum, num) => sum + num, 0);
     return result;
 }
