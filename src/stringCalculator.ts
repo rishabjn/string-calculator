@@ -5,7 +5,10 @@
 */
 
 export function add(numbers: string): number {
+    
     let result = 0;
+
+    if(numbers === "") return result;
     
     const numArray = numbers.split(",").map(num => parseInt(num, 10))
     result = numArray.reduce((sum, num) => sum + num, 0);
