@@ -10,7 +10,13 @@ export function add(numbers: string): number {
 
     if(numbers === "") return result;
     let delimiter: RegExp = /,|\n/;
-    
+
+    let delimiterMatchRegexExp: RegExpMatchArray | null = numbers.match(/^\/\/(.+)\n/);
+    if (delimiterMatchRegexExp) {
+        delimiter = new RegExp(delimiterMatchRegexExp[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+        numbers = numbers.slice(delimiterMatchRegexExp[0].length);
+    }
+
     const numArray = numbers.split(delimiter).map(num => parseInt(num, 10));
     let negatives: number[] = numArray.filter(num => num < 0);
     
