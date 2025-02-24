@@ -1,0 +1,9 @@
+# Node.js dependencies
+node_modules/
+lib/
+build/
+
+# Jest coverage and test output
+coverage/
+*.log
+jest.cache/

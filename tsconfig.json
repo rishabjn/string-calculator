@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",          // Output compiled JS files to "lib" folder
+    "rootDir": "src",         // Only compile files from "src" folder
+    "strict": true,           // Enable strict type checking
+    "module": "CommonJS",     // Module system (can be "ESNext" or "ESModule" for ESM)
+    "target": "ES6",          // JavaScript version output (ES6, ESNext, etc.)
+    "moduleResolution": "node", 
+    "esModuleInterop": true,  
+    "skipLibCheck": true,    
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],          // Only include files in "src"
+  "exclude": ["node_modules"]  // Exclude unnecessary folders
+}
