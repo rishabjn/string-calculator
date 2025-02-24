@@ -1,15 +1,15 @@
 import { add } from "./stringCalculator";
 import { NegativeNumberError } from "./util";
 
-test("Testcase 1: adds single number", () => {
+test("Testcase 1: support single number", () => {
   expect(add("1")).toBe(1);
 });
 
-test("Testcase 2: adds two comma(,) separated numbers", () => {
+test("Testcase 2: supports two comma(,) separated numbers", () => {
   expect(add("1,34")).toBe(35);
 });
 
-test("Testcase 3: number input as empty string", () => {
+test("Testcase 3: supports empty string", () => {
   expect(add("")).toBe(0);
 });
 
@@ -22,7 +22,7 @@ test("Testcase 5: supports newline character(\n) and comma(,) as delimiter", () 
 });
 
 test("Testcase 5: supports newline character delimiter and no numbers", () => {
-  expect(add("\n")).toBe(NaN);
+  expect(add("\n")).toBe(0);
 });
 
 test("Testcase 6: supports throw exception/error when negative number", () => {

@@ -24,7 +24,7 @@ export function add(numbers: string): number {
         throw new NegativeNumberError(negatives);
     }
     result = numArray.reduce((sum, num) => sum + num, 0);
-    return result;
+    return !Number.isNaN(result) ? result : 0;
 }
 
 const inputString = "1\n3,4" // Enter your string result
