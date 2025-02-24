@@ -5,10 +5,13 @@
 */
 
 export function add(numbers: string): number {
-    const addResult = numbers;
-    console.log("Welcome to Incubyte TDD Assessment! ");
+    let result = 0;
     
-    return Number(addResult);
+    const numArray = numbers.split(",").map(num => parseInt(num, 10))
+    result = numArray.reduce((sum, num) => sum + num, 0);
+    return result
 }
 
-add("1")
+const inputString = "1,34" // Enter your string result
+
+console.log(add(inputString)) //Logs the result on terminal
