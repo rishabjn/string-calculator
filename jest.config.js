@@ -3,5 +3,6 @@ module.exports = {
     testEnvironment: "node",
     collectCoverage: true,
     coverageReporters: ["json", "text", "lcov", "clover"],
+    roots: ["<rootDir>/src"]
   };
   

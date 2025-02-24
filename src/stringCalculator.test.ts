@@ -21,28 +21,28 @@ test("Testcase 5: supports newline character(\n) and comma(,) as delimiter", () 
   expect(add("2,3\n3,4")).toBe(12);
 });
 
-test("Testcase 5: supports newline character delimiter and no numbers", () => {
+test("Testcase 6: supports newline character delimiter and no numbers", () => {
   expect(add("\n")).toBe(0);
 });
 
-test("Testcase 6: supports throw exception/error when negative number", () => {
+test("Testcase 7: supports throw exception/error when negative number", () => {
   expect(() => add("-1,3")).toThrow(NegativeNumberError);
 });
 
-test("Testcase 7: supports throws error for negative numbers", () => {
+test("Testcase 8: supports throws error for negative numbers", () => {
   expect(() => add("1,-2,3,-4")).toThrow("negative numbers not allowed -2,-4");
 });
 
 
-test("Testcase 8: supports semicolon (;) as delimiter", () => {
+test("Testcase 9: supports semicolon (;) as delimiter", () => {
   expect(add("//;\n1;2;3")).toBe(6);
 });
 
-test("Testcase 9: supports hyphen (-) as delimiter", () => {
+test("Testcase 10: supports hyphen (-) as delimiter", () => {
   expect(add("//-\n1-2-3")).toBe(6);
 });
 
-test("Testcase 10: supports pipe (|) as delimiter", () => {
+test("Testcase 11: supports pipe (|) as delimiter", () => {
   expect(add("//|\n1|2|3|4")).toBe(10);
 });
 
